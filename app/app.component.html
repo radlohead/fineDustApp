@@ -1,0 +1,9 @@
+<ul class="mapData">
+    <li *ngFor="let name of names; let index = index" class="name item{{index}}_name">
+        <span>{{this.name}}</span>
+    </li>
+    <li *ngFor="let value of values; let index = index" class="value item{{index}}_value">
+        <span>{{this.value}}</span>
+    </li>
+</ul>
+<div class="map">{{map()}}</div>
