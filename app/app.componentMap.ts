@@ -38,7 +38,7 @@ export class AppComponent2 extends mapData {
         this.coord.map((v, i)=> {
             if(this.names.length < this.coord.length){
                 ajax(`http://apis.skplanetx.com/weather/dust?lon=${this.coord[i].lon}&lat=${this.coord[i].lat}&version=1&appKey=e6f67852-f0e3-3f67-a3cd-592ef90b323f`, response=> {
-                    if(this.values.length <= this.coord.length) this.values.push(response.weather.dust[i].pm10.value);
+                    this.values.push( parseInt(response.weather.dust[0].pm10.value) );
                 });
                 this.names.push(this.coord[i].name);
             }
